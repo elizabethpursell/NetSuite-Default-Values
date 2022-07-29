@@ -37,10 +37,18 @@
                     name: "internalid"
                 });
       	    });
-            itemRecord.setValue({
-                fieldId: 'custitemnutrition_facts_select',
-                value: internalid
-            });
+          	if(internalid == null || internalid == ''){
+              	itemRecord.setValue({
+                	fieldId: 'custitemnutrition_facts_select',
+                	value: 22
+            	});
+            }
+          	else{
+              	itemRecord.setValue({
+                	fieldId: 'custitemnutrition_facts_select',
+                	value: internalid
+            	});
+            }
         }
     }
     return {
