@@ -55,7 +55,7 @@ Be sure to note the saved search ID.
     - Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
     - Referencing Different Fields: whenever there is a set/get value instance (itemRecord.getValue or itemRecord.setValue), change the parameter "fieldId" to the correct internal ID
     - Applying to Different Record Type: change the saved searches to search under the correct record type; whenever there is a record load instance (record.load), change the record type to the correct one
-- **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
+- **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; press the blue "Save" button and choose "Save and Execute"; once the code has been tested, change the status to "Scheduled"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors
 ### set_item_status.sql
 - **Programming Languages:** SQL
 - **Skills:** case statements
