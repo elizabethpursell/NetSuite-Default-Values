@@ -12,7 +12,7 @@ define(['N/search', 'N/record'], function(search, record){
                 var internalid = result.getValue({
                     name: "internalid"
                 });
-                var poRecord = record.load({
+                var poRecord = record.load({                //loads the PO record
                     type: record.Type.PURCHASE_ORDER,
                     id: internalid
                 });
