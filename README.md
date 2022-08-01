@@ -56,12 +56,18 @@ Be sure to note the saved search ID.
     - Referencing Different Fields: whenever there is a set/get value instance (itemRecord.getValue or itemRecord.setValue), change the parameter "fieldId" to the correct internal ID
     - Applying to Different Record Type: change the saved searches to search under the correct record type; whenever there is a record load instance (record.load), change the record type to the correct one
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; press the blue "Save" button and choose "Save and Execute"; once the code has been tested, change the status to "Scheduled"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; under the "Schedule" subtab, choose the schedule that the SuiteScript should execute on (Daily Event, Repeat Every 1 Day(s), Start Time 12:00am, Repeat Every 2 Hours)
+
+![itemclosure](https://user-images.githubusercontent.com/94419306/182230760-12e71f7d-c89d-40db-b7cd-322819ff8310.png)
+
 ### set_item_status.sql
 - **Programming Languages:** SQL
 - **Skills:** case statements
 - **Description:** sets a purchase order's line item's status in a custom field or saved search column; use SQL expressions like these to easily source fields
 - **Catering the Code to Your NetSuite:**
     - Using Different Formula Types in a Saved Search: when selecting the field as a column under the "Results" subtab in a new saved search, choose the type that corresponds to the output (numeric for numbers, text for words, etc.)
+
+![sqlformula](https://user-images.githubusercontent.com/94419306/182231231-a107f69b-4983-4c17-ac84-e42654e1a5af.PNG)
+
 ### set_master_default.js
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Client Script, pageInit
@@ -71,6 +77,9 @@ Be sure to note the saved search ID.
     - Applying Changes to a Different Sublist: whenever there is a reference to a sublist for a parameter "sublistId", change it to the desired sublist ID
     - Setting a Different Field: whenever the sublist field value is set (itemRecord.setCurrentSublistValue), change the parameter "fieldId" to the desired field and change the parameter "value" to the correct field value
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; under "Applies To," select the record type that you want the button to appear on (I used Lot Numbered Assembly/Bill of Materials); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
+
+![masterdefault](https://user-images.githubusercontent.com/94419306/182231417-6a1592db-2f2e-4b46-b5e8-a78725f39d78.PNG)
+
 ### set_expiration_mandatory_es.js
 - **Programming Languages:** JavaScript, SuiteScript 1.0
 - **SuiteScript Type:** beforeLoad
@@ -79,6 +88,9 @@ Be sure to note the saved search ID.
     - Setting a Different Field: whenever the field value is selected (nlapiGetField), change the parameter "expirationdate" to the desired field ID
     - Changing the Mandatory Permissions: whenever the field mandatory permissions are set (setMandatory), change the parameter "true" to the correct value
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
+
+![expirationdate](https://user-images.githubusercontent.com/94419306/182232474-96723c92-08ab-46a3-b91f-f33a18b5c24f.png)
+
 ## References
 ### Helpful Links
 - **SuiteScript 2.0:** https://docs.oracle.com/cd/E60665_01/netsuitecs_gs/NSAPI/NSAPI.pdf
