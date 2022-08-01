@@ -11,43 +11,45 @@
         var fieldName = context.fieldId;
         if(fieldName == 'custitemselect_flavor' || fieldName == 'custitemselect_weight'){
           	var flavor = itemRecord.getValue({
-        		fieldId: 'custitemselect_flavor'
-        	});
-        	var weight = itemRecord.getValue({
-          		fieldId: 'custitemselect_weight'
-        	});
-            var bagSearch = search.load({
-                id: 'customsearchspfg_bag'
-            });
-            var flavorFilter = search.createFilter({
-                name: 'custrecordmarshmallow_flavor',
-                operator: search.Operator.IS,
-                values: [flavor]
-            });
-            var weightFilter = search.createFilter({
-                name: 'custrecordweight_settings',
-                operator: search.Operator.IS,
-                values: [weight]
-            });
-            var internalid = 0;
-            bagSearch.filters.push(flavorFilter);
-            bagSearch.filters.push(weightFilter);
-            bagSearch.run().each(function(result){
-                internalid = result.getValue({
-                    name: "internalid"
-                });
-      	    });
-          	if(internalid == null || internalid == ''){
-              	itemRecord.setValue({
-                	fieldId: 'custitemnutrition_facts_select',
-                	value: 22
+        		   fieldId: 'custitemselect_flavor'
+        	  });
+        	  var weight = itemRecord.getValue({
+          		 fieldId: 'custitemselect_weight'
+        	  });
+           if(flavor != null && flavor != '' && weight != null && weight != ''){
+             var bagSearch = search.load({
+                	id: 'customsearchspfg_bag'
             	});
-            }
-          	else{
-              	itemRecord.setValue({
-                	fieldId: 'custitemnutrition_facts_select',
-                	value: internalid
+             var flavorFilter = search.createFilter({
+                	name: 'custrecordmarshmallow_flavor',
+                	operator: search.Operator.IS,
+                	values: [flavor]
             	});
+            	var weightFilter = search.createFilter({
+                	name: 'custrecordweight_settings',
+                	operator: search.Operator.IS,
+                	values: [weight]
+            	});
+            	var internalid = 0;
+            	bagSearch.filters.push(flavorFilter);
+            	bagSearch.filters.push(weightFilter);
+            	bagSearch.run().each(function(result){
+                	internalid = result.getValue({
+                    	name: "internalid"
+                	});
+      	    	 });
+          		 if(internalid == null || internalid == ''){
+              		itemRecord.setValue({
+                		fieldId: 'custitemnutrition_facts_select',
+                		value: 22
+            		  });
+            	}
+          		 else{
+              		itemRecord.setValue({
+                		fieldId: 'custitemnutrition_facts_select',
+                		value: internalid
+            		  });
+            	}
             }
         }
     }
