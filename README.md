@@ -50,7 +50,7 @@ Be sure to note the saved search ID.
 ### set_po_item_status_scheduled.js
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Scheduled Script, execute
-- **Description:** sets a purchase order's line item's status in a custom field; was not practical to use since I found SQL expressions to use, but would be a useful foundation for future projects
+- **Description:** sets a purchase order's line item's status in a custom field; was not practical to use since I found SQL expressions instead, but would be a useful foundation for future projects
 - **Catering the Code to Your NetSuite:**
     - Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
     - Referencing Different Fields: whenever there is a set/get value instance (itemRecord.getValue or itemRecord.setValue), change the parameter "fieldId" to the correct internal ID
@@ -59,7 +59,7 @@ Be sure to note the saved search ID.
 ### set_item_status.sql
 - **Programming Languages:** SQL
 - **Skills:** case statements
-- **Description:** sets a purchase order's line item's status in a custom field or saved search column; use this to easily automatically source fields
+- **Description:** sets a purchase order's line item's status in a custom field or saved search column; use SQL expressions like these to easily source fields
 - **Catering the Code to Your NetSuite:**
     - Using Different Formula Types in a Saved Search: when selecting the field as a column under the "Results" subtab in a new saved search, choose the type that corresponds to the output (numeric for numbers, text for words, etc.)
 ### set_master_default.js
