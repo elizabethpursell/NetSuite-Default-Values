@@ -31,6 +31,12 @@ Be sure to note the saved search ID.
     - **Criteria:** Main Line is true, Record Type starts with purchaseorder
     - **Result Columns:** Internal ID
     - **Permissions:** Public
+- **Active Non Phantom Items:**
+    - **Function:** collects all active, non-phantom items; used in update_wms_settings.js to load all the item records
+    - **Search Type:** Transaction
+    - **Criteria:** Main Line is true, Record Type starts with purchaseorder
+    - **Result Columns:** Internal ID
+    - **Permissions:** Public
 ### Custom Fields/Record Types
 - **Fields:** Most of the data fields that I referenced were custom fields. These programs will also work with standard fields, as long as you can identify their internal IDs.
 - **Record Types:** I used custom record types for the dropdown list field in spec_set_nutrition_facts.js. Each record of my custom record type held data that would autofill fields on an item record.
