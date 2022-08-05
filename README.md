@@ -91,6 +91,26 @@ Be sure to note the saved search ID.
 
 ![expirationdate](https://user-images.githubusercontent.com/94419306/182232474-96723c92-08ab-46a3-b91f-f33a18b5c24f.png)
 
+### set_lot_bin_mix.js
+- **Programming Languages:** JavaScript, SuiteScript 1.0
+- **SuiteScript Type:** beforeLoad
+- **Description:** sets the "Mix Items in Bins" and "Mix Lots in Bins" fields to true for all inventory items
+- **Catering the Code to Your NetSuite:**
+    - Setting a Different Field: whenever the sublist field value is set (itemRecord.setValue), change the parameter "fieldId" to the desired field and change the parameter "value" to the correct field value
+- **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; under "Applies To," select the record type that you want the button to appear on (I used Lot Numbered Inventory Item); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
+
+![wms_checkboxes](https://user-images.githubusercontent.com/94419306/183113654-aac5b584-86cd-4264-a869-97e0f8e54ee8.PNG)
+
+### set_lot_bin_mix_assmbly.js
+- **Programming Languages:** JavaScript, SuiteScript 1.0
+- **SuiteScript Type:** beforeLoad
+- **Description:** sets the "Mix Items in Bins" and "Mix Lots in Bins" fields to true for all non-phantom assembly items
+- **Catering the Code to Your NetSuite:**
+    - Setting a Different Field: whenever the sublist field value is set (itemRecord.setValue), change the parameter "fieldId" to the desired field and change the parameter "value" to the correct field value
+- **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; under "Applies To," select the record type that you want the button to appear on (I used Lot Numbered Assembly/Bill of Materials); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
+
+![wms_checkboxes](https://user-images.githubusercontent.com/94419306/183113654-aac5b584-86cd-4264-a869-97e0f8e54ee8.PNG)
+
 ## References
 ### Helpful Links
 - **SuiteScript 2.0:** https://docs.oracle.com/cd/E60665_01/netsuitecs_gs/NSAPI/NSAPI.pdf
