@@ -82,7 +82,7 @@ Be sure to note the saved search ID.
 
 ### set_expiration_mandatory_es.js
 - **Programming Languages:** JavaScript, SuiteScript 1.0
-- **SuiteScript Type:** beforeLoad
+- **SuiteScript Type:** Client Script, beforeLoad
 - **Description:** sets the expiration date field on inventory number records to mandatory
 - **Catering the Code to Your NetSuite:**
     - Setting a Different Field: whenever the field value is selected (nlapiGetField), change the parameter "expirationdate" to the desired field ID
@@ -93,7 +93,7 @@ Be sure to note the saved search ID.
 
 ### set_lot_bin_mix.js
 - **Programming Languages:** JavaScript, SuiteScript 1.0
-- **SuiteScript Type:** beforeLoad
+- **SuiteScript Type:** Client Script, beforeLoad
 - **Description:** sets the "Mix Items in Bins" and "Mix Lots in Bins" fields to true for all inventory items
 - **Catering the Code to Your NetSuite:**
     - Setting a Different Field: whenever the sublist field value is set (itemRecord.setValue), change the parameter "fieldId" to the desired field and change the parameter "value" to the correct field value
@@ -103,11 +103,21 @@ Be sure to note the saved search ID.
 
 ### set_lot_bin_mix_assmbly.js
 - **Programming Languages:** JavaScript, SuiteScript 1.0
-- **SuiteScript Type:** beforeLoad
+- **SuiteScript Type:** Client Script, beforeLoad
 - **Description:** sets the "Mix Items in Bins" and "Mix Lots in Bins" fields to true for all non-phantom assembly items
 - **Catering the Code to Your NetSuite:**
     - Setting a Different Field: whenever the sublist field value is set (itemRecord.setValue), change the parameter "fieldId" to the desired field and change the parameter "value" to the correct field value
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; under "Applies To," select the record type that you want the button to appear on (I used Lot Numbered Assembly/Bill of Materials); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
+
+![wms_checkboxes](https://user-images.githubusercontent.com/94419306/183113654-aac5b584-86cd-4264-a869-97e0f8e54ee8.PNG)
+
+### update_wms_settings.js
+- **Programming Languages:** JavaScript, SuiteScript 1.0
+- **SuiteScript Type:** Scheduled Script, execute
+- **Description:** sets the "Mix Items in Bins" and "Mix Lots in Bins" fields to true for all non-phantom assembly items; used to mass update old item records
+- **Catering the Code to Your NetSuite:**
+    - Setting a Different Field: whenever the sublist field value is set (itemRecord.setValue), change the parameter "fieldId" to the desired field and change the parameter "value" to the correct field value
+- **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; press the blue "Save" button and choose "Save and Execute"; once the code has been tested, change the status to "Scheduled"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; under the "Schedule" subtab, choose the schedule that the SuiteScript should execute on (Single Event)
 
 ![wms_checkboxes](https://user-images.githubusercontent.com/94419306/183113654-aac5b584-86cd-4264-a869-97e0f8e54ee8.PNG)
 
