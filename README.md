@@ -33,9 +33,9 @@ Be sure to note the saved search ID.
     - **Permissions:** Public
 - **Active Non Phantom Items:**
     - **Function:** collects all active, non-phantom items; used in update_wms_settings.js to load all the item records
-    - **Search Type:** Transaction
-    - **Criteria:** Main Line is true, Record Type starts with purchaseorder
-    - **Result Columns:** Internal ID
+    - **Search Type:** Item
+    - **Criteria:** Is Phantom is false, Inactive is false, Use Bins is true, WMS MIX ITEMS IN BINS is false
+    - **Result Columns:** Name, Display Name, Description, Type, WMS MIX ITEMS IN BINS, WMS MIX LOTS IN BINS, Internal ID, Is Lot Numbered Item
     - **Permissions:** Public
 ### Custom Fields/Record Types
 - **Fields:** Most of the data fields that I referenced were custom fields. These programs will also work with standard fields, as long as you can identify their internal IDs.
