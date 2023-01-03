@@ -1,10 +1,11 @@
 # NetSuite-Default-Values
 ## Project Overview
 ### Purpose
-This repository holds different examples of setting default field values using SuiteScript and SQL. The different field types include dropdown lists, checkboxes, and text boxes. There is also an example of how to set a field to mandatory using SuiteScript API Version 1.0.
+This repository holds different examples of setting default field values using SuiteScript and SQL. The different field types include dropdown lists, checkboxes, text boxes, and sublists. There is also an example of how to set a field to mandatory using SuiteScript API Version 1.0.
 ### Features
 - Default Field Values
 - Mandatory Fields
+- Sublists
 - Saved Searches
 - SQL Default Value Expressions
 ### Prerequisites
@@ -126,6 +127,16 @@ Be sure to note the saved search ID.
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; press the blue "Save" button and choose "Save and Execute"; once the code has been tested, change the status to "Scheduled"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; under the "Schedule" subtab, choose the schedule that the SuiteScript should execute on (Single Event)
 
 ![wms_checkboxes](https://user-images.githubusercontent.com/94419306/183113654-aac5b584-86cd-4264-a869-97e0f8e54ee8.PNG)
+
+### set_lot_code_cs.js
+- **Programming Languages:** JavaScript, SuiteScript 2.0
+- **SuiteScript Type:** Client Script, pageInit
+- **Description:** sets the default lot number to today's date on Inventory Detail records
+- **Catering the Code to Your NetSuite:**
+    - Setting a Different Field: whenever the sublist field value is set (itemRecord.setValue), change the parameter "fieldId" to the desired field and change the parameter "value" to the correct field value
+- **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; under "Applies To," select the record type that you want the button to appear on (I used Inventory Detail); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
+
+<img width="349" alt="default_lot" src="https://user-images.githubusercontent.com/94419306/210432378-5b998f0b-032e-4709-8bf3-b7ab96624720.png">
 
 ## References
 ### Helpful Links
