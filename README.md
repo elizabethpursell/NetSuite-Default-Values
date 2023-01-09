@@ -131,7 +131,7 @@ Be sure to note the saved search ID.
 ### set_lot_code_cs.js
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Client Script, pageInit
-- **Description:** sets the default lot number to today's date on Inventory Detail records
+- **Description:** sets the default lot number to today's date on Inventory Detail records for assemblies
 - **Catering the Code to Your NetSuite:**
     - Setting a Different Field: whenever the sublist field value is set (itemRecord.setValue), change the parameter "fieldId" to the desired field and change the parameter "value" to the correct field value
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; under "Applies To," select the record type that you want the button to appear on (I used Inventory Detail); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
